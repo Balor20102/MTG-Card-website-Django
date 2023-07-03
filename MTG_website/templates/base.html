@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTG Website</title>
+    {% block stylesheets %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/blog.css' %}"> {% endcomment %}
+    {% endblock stylesheets %}
+</head>
+<body>
+    {% include "components/header.html" %}
+    <main>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock content %}
+    </main>
+    {% include "components/footer.html" %}
+    
+    {% block javascript %}
+    {% endblock javascript %}
+</body>
+</html>
+```
