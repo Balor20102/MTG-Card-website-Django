@@ -3,5 +3,14 @@
 {% block content %}
     <h1>Home</h1>
     <p>Home page content</p>
+    {% for card in card %}
+        {{card.name}}<br>
+        {{card.text}}<br>
+        {{card.price}}<br>
+        <img alt = "img" src= "{{card.image_url}}"> <br>
+        {{card.set_name}}<br>
+        {{card.id}}<br>
+    {% endfor %}
+    
 {% endblock %}
 ```
